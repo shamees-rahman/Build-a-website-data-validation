@@ -12,7 +12,7 @@ let fnameerror = document.getElementById("fnameerror");
 let emailformat=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
 let pwdformat=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,}$/; 
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
-let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))')
 let phoneformat=/^\d{3}[-| |\.]?\d{3}[-| |\.]?\d{4}$/;
 let nameformat=/^[a-zA-Z]+$/; 
 function validate(){
@@ -39,18 +39,6 @@ function emaillabel(){
         email.style.border = "medium solid red";
     }    
 }
-function pwdlabel(){
-    if(pwdformat.test(pwd.value.trim())){
-        pwd.style.border = "medium solid green";
-    }
-    else if(!pwdformat.test(pwd.value.trim())){
-        pwderror.innerHTML = "Min 8 characters including 1 lowercase letter, 1 uppercase letter & 1 digit";
-        pwderror.style.color = "red";
-        pwd.style.border = "medium solid red";
-    }    
-}
-
-
 
  let timeout;
 
@@ -59,12 +47,18 @@ function pwdlabel(){
         if(strongPassword.test(PasswordParameter)) {
             pwderror.style.color = "green"
             pwderror.innerHTML = 'Strong'
+            pwd.style.border = "medium solid green";
+
         } else if(mediumPassword.test(PasswordParameter)){
-            pwderror.style.color = 'blue'
+            pwderror.style.color = 'yellow'
             pwderror.innerHTML = 'Medium'
+            pwd.style.border = "medium solid yellow";
+
         } else{
             pwderror.style.color = 'red'
             pwderror.innerHTML = 'Weak'
+            pwd.style.border = "medium solid red";
+
         }
     }
 
