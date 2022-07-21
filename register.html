@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Dashboard Template</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="https://kit.fontawesome.com/4fea67d148.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Akaya Kanadaka' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Syne' rel='stylesheet'>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  
+
+  
+  .wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .registration_form{
+    background: black;
+    padding: 25px;
+    border-radius: 5px;
+    width: 400px;
+  }
+  
+  .registration_form .title{
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: white;
+    background:black;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-top: -25px;
+    margin-left:-25px;
+    margin-right:-25px;
+  }
+  
+  .form_wrap{
+    margin-top: 35px;
+  }
+  
+  .form_wrap .input_wrap{
+    margin-bottom: 15px;
+  }
+  
+  .form_wrap .input_wrap:last-child{
+    margin-bottom: 0;
+  }
+  
+  .form_wrap .input_wrap label{
+    display: block;
+    margin-bottom: 3px;
+    color: white;
+  }
+  
+  .form_wrap .input_grp{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form_wrap .input_grp  input[type="text"]{
+    width: 165px;
+  }
+
+  .form_wrap .input_grp  input[type="password"]{
+    width: 165px;
+  }
+  
+  .form_wrap  input[type="text"]{
+    width: 100%;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    padding: 10px;
+    outline: none;
+  }
+  
+  .form_wrap  input[type="password"]{
+    width: 100%;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    padding: 10px;
+    outline: none;
+  }
+
+  .form_wrap  input[type="text"]:focus{
+    border-color: #063abd;
+  }
+  .form_wrap  input[type="password"]:focus{
+    border-color: #063abd;
+  }
+  
+  .form_wrap ul{
+   border:1px solid rgb(115, 185, 235);
+    width:70%;
+    background: rgb(206, 238, 242);
+    margin-left: 15%;
+    padding: 8px 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form_wrap ul li:first-child{
+    margin-right: 15px;
+  }
+  
+ 
+  
+  .form_wrap .submit_btn{
+    width: 100%;
+    background: black;
+    padding: 10px;
+    border: 0;
+    color:white;
+    font-size:17px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .form_wrap .submit_btn:hover{
+    background: #051c94;
+  }
+  
+    </style>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <div class="heading"><header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn" style="color: white;"></i>
+      </label>
+      <div class="left_area">
+        <a href="index.html"><h3>OMKP</h3></a>
+      </div>
+      <div class="right_area">
+        <!-- <button class='logout_btn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button> -->
+      </div>
+      <!-- login -->
+      <div id='login-form'class='login-page'>
+        <div class="form-box">
+            <div class='button-box'>
+               <a href="register.html">Back to page</a>
+            </div>
+            
+        </div>
+    </div></div>
+    <!-- login end -->
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_image">
+        <img src="images/user.png" alt=""></div>
+        <h4>Username<span>eeeee</span></h4>
+      
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home Page</span></a>
+      <a href="locator.html"><i class="fa-solid fa-location-dot"></i><span>Locator</span></a>
+      <a href="register.html"><i class="fa-solid fa-address-card"></i><span>Register</span></a>
+    </div>
+    <!--sidebar end-->
+<div class="maincont">
+    <div class="content"></div>
+    <div class="content2">
+      <div class="wrapper">
+        <div class="registration_form">
+          <div class="title">
+            Registration Form
+          </div>
+    
+          <form action="index.html" onsubmit="return regvalidate()">
+            <div class="form_wrap">
+              <div class="input_grp">
+                <div class="input_wrap">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" onblur= "alphalabel('fname')" required>
+                  <label for="fname" id="fnameerror" style="font-size: 0.9rem;"></label>
+                </div>
+                <div class="input_wrap">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" onblur= "alphalabel('lname')" required>
+                  <label for="lname" id="lnameerror" style="font-size: 0.9rem;"></label>
+                </div>
+              </div>
+              <div class="input_wrap">
+                <label for="email">Email Address</label>
+                <input type="text" id="email" onblur= "emaillabel()" required>
+                <label for="email" id="emailerror" style="font-size: 0.9rem;"></label>
+              </div>
+    
+              <div class="input_wrap">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <label for="password" id="pwderror" style="font-size: 0.9rem;"></label>
+              </div>
+              <div class="input_wrap">
+                <label for="country">Country</label>
+                <input type="text" id="country"onblur= "alphalabel('country')" required>
+                <label for="country" id="countryerror" style="font-size: 0.9rem;"></label>
+              </div>
+    
+              
+    
+    
+    
+              <div class="input_wrap">
+                <input type="submit" value="Register Now" class="submit_btn">
+              </div>
+    
+    
+    
+            </div>
+    
+    
+    
+    
+    
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="form.js"></script>
+  </body>
+</html>
+      
